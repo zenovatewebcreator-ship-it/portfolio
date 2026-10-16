@@ -226,12 +226,13 @@
   /* Video portfolio: matches existing work cards. */
   #video{scroll-margin-top:68px}
   .g-video{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 22px}
-  .video-player{aspect-ratio:16/9;background:var(--sunk);border:1px solid var(--line)}
-  .video-player iframe{display:block;width:100%;height:100%;border:0}
+  .g-video > .w{min-width:0}
+  .video-player{position:relative;width:100%;height:0;padding-bottom:56.25%;overflow:hidden;background:var(--sunk);border:1px solid var(--line)}
+  .video-player iframe{position:absolute;inset:0;display:block;width:100%;height:100%;max-width:100%;border:0}
   .video-title{font-size:14px;line-height:1.7;font-weight:600;margin:0 0 8px}
   .video-link{font-size:12px;color:var(--moss);text-underline-offset:4px}
   .video-note{font-size:12px;color:var(--ink-2);margin-top:22px}
-  @media(max-width:640px){.g-video{grid-template-columns:1fr}}
+  @media(max-width:640px){.g-video{grid-template-columns:minmax(0,1fr)}}
 
   .book-cover{display:flex;align-items:center;justify-content:center;background:var(--sunk);padding:22px;border-bottom:1px solid var(--line);height:360px}
   .book-cover img{max-height:100%;max-width:100%;width:auto;height:auto;object-fit:contain;box-shadow:0 5px 16px rgba(0,0,0,.14)}
